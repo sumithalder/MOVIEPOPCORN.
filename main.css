@@ -1,0 +1,463 @@
+/*--------Global---------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    border: o;
+    font-size: 100%;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+:root{
+    --main-black: #1E202B;
+    --main-blue: #08AEEA;
+    --main-green: #2AF598;
+    --main-gradient: linear-gradient(to right, var(--main-blue), var(--main-green));
+}
+
+html{
+    font-family: Source Sans Pro, sans-serif;
+}
+
+body{
+    width: 100%;
+    background-color: white;
+}
+
+h1{
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--main-black);
+}
+
+h2{
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--main-black);
+}
+
+p, li{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--main-black);
+}
+
+.btnWhite{
+    display: inline-block;
+    text-decoration: none;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 135px;
+    background: #2af598; /* Old Browsers */
+    background: -webkit-linear-gradient(top right,#2af598,#08aeea); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top right,#2af598,#08aeea); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top right,#2af598,#08aeea); /*Fx 3.6-15*/
+    background: linear-gradient(top right, #2af598, #08aeea); /*Standard*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btnGroup{
+    position: relative;
+    z-index: 1;
+}
+
+.whiteBG{
+    background-color: white;
+    display: block;
+    height: 60px;
+    width: 200px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    border-radius: 3px;
+}
+
+.btnColor{
+    display: inline-block;
+    text-decoration: none;
+    height: 60px;
+    width: 200px;
+    line-height: 60px;
+    background-image: var(--main-gradient);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), background-position 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 500ms linear;
+    -webkit- transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), background-position 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 500ms linear;
+    -o- transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), background-position 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 500ms linear;
+    -moz- transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), background-position 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 500ms linear;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btnColor:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btnColor:active {
+  transform: scale(1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btnGreen{
+    color: var(--main-green);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+span{
+    color: var(--main-green);
+}
+
+
+/*--------header/nav---------------*/
+
+nav{
+    display: inline-block;
+    width: 100%;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    line-height: 100px;
+}
+
+.logo{
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-left: 50px;
+}
+
+header h1{
+    color: white;
+    width: 55%;
+    margin: 90px 0 40px 0;
+}
+
+header p{
+    color: white;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+header{
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 900px;
+    width: 90%;
+    padding: 0 5%;
+    position: relative;
+}
+
+.ipad{
+    position: absolute;
+    width: 60%;
+    right: 0;
+    bottom: 60px;
+}
+
+.iphone{
+    position: absolute;
+    width: 40%;
+    right: 4px;
+    top: 150px;
+    display: none;
+}
+
+
+
+.signBtn{
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    background: #2af598; /* Old Browsers */
+    background: -webkit-linear-gradient(top right,#2af598,#08aeea); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top right,#2af598,#08aeea); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top right,#2af598,#08aeea); /*Fx 3.6-15*/
+    background: linear-gradient(top right, #2af598, #08aeea); /*Standard*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btnSign{
+    position: relative;
+    z-index: 1;
+}
+
+.signBG{
+    background-color: white;
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    margin-top: -5px;
+    border-radius: 20px;
+}
+
+.mobile{
+    display: none;
+}
+
+label{
+    margin: 0 40px 0;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    right: 0;
+
+}
+
+#toggle{
+    display: none;
+}
+ 
+.mobile ul{
+    text-align: center;
+    width: 100%;
+    display: none;
+    margin: 0;
+    background-color: rgba(225,225,225,0.1);
+}
+
+.mobile ul li{
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid rgba(225,225,225,0.2);
+}
+
+#toggle:checked ~ ul{
+    display: block;
+}
+
+
+/*--------movies section---------------*/
+
+
+.newMovie{
+    width: 90%;
+    padding: 0 5%;
+    margin-bottom: 160px;
+}
+
+.movieTitle h2, .movieTitle a{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.movieTitle a{
+    margin-left: 20px;
+}
+
+.movieTitle{
+    margin: 50px 0 20px 0;
+}
+
+
+.newMovie ul{
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+}
+
+.newMovie ul li img{
+    width: 92%;
+    margin: 4%;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
+}
+
+
+/*--------call to action---------------*/
+
+.callToAction{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto 200px auto;
+}
+
+.callToAction h1{
+    margin-bottom: 40px;
+}
+
+
+/*-------------footer---------------*/
+
+
+footer a{
+    text-decoration: none;
+    color: var(--main-black);
+}
+
+footer ul{
+    list-style: none;
+    float: right;
+}
+
+footer ul li{
+    display: inline-block;
+    margin-left: 50px;
+}
+
+
+.copy a, .copy p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.copy p{
+    margin-left: 20px;
+}
+
+footer{
+    width: 90%;
+    padding: 0 5%;
+}
+
+footer ul, .copy{
+    line-height: 80px;
+    display: inline-block;
+}
+
+
+/*-------------responsive---------------*/
+
+@media only screen and (max-width: 1200px){
+
+    header{
+        height: 100vh;
+        min-height: 1000px;
+    }
+    header h1{
+        margin: 50px 0 40px 0;
+    }
+    .btnWhite{
+        margin-bottom: 80px;
+    }
+    .callToAction{
+        width: 90%;
+    }
+    .ipad{
+        display: none;
+    }
+    .iphone{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    header h1 {
+        width: 100%;
+    }
+    header{
+        background-position: left center;
+    }
+    .iphone{
+        display: none;
+    }
+    footer ul{
+        float: none;
+        display: block;
+        text-align: center;
+    }
+    .copy{
+        text-align: center;
+        display: block;
+    }
+    footer ul li{
+        margin: 0 25px;
+    }
+}
+
+
+@media only screen and (max-width: 700px){
+     
+    .newMovie ul{
+        display: inline-grid;
+        grid-template-columns: repeat(1,auto);
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    nav ul li{
+        margin: 0;
+    }
+    footer ul li{
+        display: none;
+    }
+    h1{
+        font-size: 36px;
+    }
+    .logo{
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
